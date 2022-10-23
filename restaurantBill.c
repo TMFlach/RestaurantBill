@@ -7,7 +7,9 @@ int main(int argc, char* argv[]) {
         printf("Invalid # of arguments. Usage: program.exe tax tip");
         return EXIT_FAILURE;
     }
-
+    double tax = atof(argv[1]);
+    double tip = atof(argv[2]);
+    printf("Tax: %f \nTip: %f", tax, tip);
 }
 
 //create random function to select a menu item
