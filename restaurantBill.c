@@ -17,11 +17,12 @@ int main(int argc, char* argv[]) {
     extern int menuSize;
     PtrToMealItem selected = randomMeal(menu, menuSize);
     printf("Selected item: %s\n", selected->item);
-    printf("Price: %f", selected->price);
+    printf("Price: %f\n", selected->price);
     tax = selected->price * tax;
     tip = selected->price * tip;
-    printf("Tax: %f", tax);
-    printf("Tip: %f", tip);
+    printf("Tax: %f\n", tax);
+    printf("Tip: %f\n", tip);
+    printf("Total: %f\n", (tax + tip + selected->price));
     return EXIT_SUCCESS;
 }
 
