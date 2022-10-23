@@ -1,7 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include "mealItem.h"
 
+//function declarations
+PtrToMealItem randomMeal(MealItem* menu, int size);
 //create main function to recieve commandline arguments of tax and tip
 int main(int argc, char* argv[]) {
     if(argc != 3) {
@@ -12,9 +15,21 @@ int main(int argc, char* argv[]) {
     double tip = atof(argv[2]);
     extern MealItem menu[];
     extern int menuSize;
+    PtrToMealItem selected = randomMeal(menu, menuSize);
+    printf("Selected item: %s\n", selected->item);
+    printf("Price: %f", selected->price);
+    tax = selected->price * tax;
+    tip = selected->price * tip;
+    printf("Tax: %f", tax);
+    printf("Tip: %f", tip);
+    return EXIT_SUCCESS;
 }
 
 //create random function to select a menu item
-
+PtrToMealItem randomMeal(MealItem* menu, int size) {
+    time_t t;
+    srand((unsigned) time(&t));
+    return &menu[rand() % size];
+}
 
 //create function to display the meal price, tax amount, tip amount, and total bill to screen.
