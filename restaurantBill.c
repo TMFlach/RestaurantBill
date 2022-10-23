@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "mealItem.h"
 
 //create main function to recieve commandline arguments of tax and tip
 int main(int argc, char* argv[]) {
@@ -9,7 +10,8 @@ int main(int argc, char* argv[]) {
     }
     double tax = atof(argv[1]);
     double tip = atof(argv[2]);
-    printf("Tax: %f \nTip: %f", tax, tip);
+    extern MealItem menu[];
+    extern int menuSize;
 }
 
 //create random function to select a menu item

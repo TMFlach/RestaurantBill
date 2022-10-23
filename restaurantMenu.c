@@ -1,9 +1,4 @@
-//create struct table containing restraunt menu.
-typedef struct {
-    char* item;
-    double price;
-} MealItem, *PtrToMealItem;
-typedef const MealItem *PtrToConstMealItem;
+#include "mealItem.h"
 
 const MealItem menu[] = {
     {"Salad", 9.95},
@@ -11,3 +6,5 @@ const MealItem menu[] = {
     {"Sandwich", 13.25},
     {"Pizza", 22.35}
 };
+
+const int menuSize = sizeof(menu)/sizeof(menu[0]);
